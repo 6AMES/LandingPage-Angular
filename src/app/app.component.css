@@ -5,13 +5,16 @@
     font-family: 'Arial', sans-serif;
 }
 body {
-    background-color: #f0f0f0;
-    color: #333;
+    background-color: #EDEDED;
+    color: #171717;
     line-height: 1.6;
 }
 .search-header {
-    background-color: #003366;
-    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
     padding: 1rem;
 }
 .search-form {
@@ -22,40 +25,66 @@ body {
     gap: 1rem;
     max-width: 1200px;
     margin: 0 auto;
+    /*background-color: rgba(255, 255, 255, 0.8);*/
+    padding: 1rem;
+    border-radius: 15px;
 }
 .search-form input, .search-form select {
-    padding: 0.5rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    background-color: rgba(237, 237, 237, 0.8);
+    padding: 0.75rem 1rem;
+    border: 1px solid #444444;
+    border-radius: 9999px; /* Esto hace que los bordes sean completamente redondos */
     flex-grow: 1;
+    width: 200px; /* Ancho fijo para todos los elementos */
+    height: 50px; /* Alto fijo para todos los elementos */
+    font-size: 1rem;
+    color: #171717;
+}
+.search-form input::placeholder {
+    color: #444444;
 }
 .search-form button {
-    background-color: #ff6600;
-    color: white;
+    background-color: #DA0037;
+    color: #EDEDED;
     border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
     cursor: pointer;
+    padding: 0.75rem 1rem;
+    border-radius: 9999px;
+    flex-grow: 1;
+    width: 200px;
+    height: 50px;
+    font-size: 1rem;
+    font-weight: bold;
+}
+.search-form button:hover {
+    background-color: #ff1f5a;
 }
 .hero {
     background-image: url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80');
     background-size: cover;
     background-position: center;
-    height: 400px;
+    height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: white;
+    padding-top: 80px; /* Para dar espacio al formulario */
 }
 .hero h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    background-color: rgba(23, 23, 23, 0.7);
+    padding: 1rem;
+    border-radius: 10px;
 }
 .featured {
     padding: 2rem;
     text-align: center;
+    background-color: #444444;
+    color: #EDEDED;
 }
 .featured h2 {
     margin-bottom: 1rem;
@@ -66,16 +95,17 @@ body {
     flex-wrap: wrap;
 }
 .offer {
-    background-color: white;
+    background-color: #EDEDED;
     border-radius: 8px;
     padding: 1rem;
     margin: 1rem;
     width: calc(33.333% - 2rem);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px rgba(68, 68, 68, 0.1);
+    color: #171717;
 }
 .offer button {
-    background-color: #ff6600;
-    color: white;
+    background-color: #DA0037;
+    color: #EDEDED;
     border: none;
     padding: 0.5rem 1rem;
     border-radius: 4px;
@@ -83,19 +113,24 @@ body {
     margin-top: 1rem;
 }
 footer {
-    background-color: #003366;
-    color: white;
+    background-color: #171717;
+    color: #EDEDED;
     text-align: center;
     padding: 1rem;
     margin-top: 2rem;
+}
+@media (max-width: 1024px) {
+    .search-form input, .search-form select, .search-form button {
+        width: calc(50% - 0.5rem);
+    }
 }
 @media (max-width: 768px) {
     .search-form {
         flex-direction: column;
         align-items: stretch;
     }
-    .offer {
-        width: calc(50% - 2rem);
+    .search-form input, .search-form select, .search-form button {
+        width: 100%;
     }
 }
 @media (max-width: 480px) {
