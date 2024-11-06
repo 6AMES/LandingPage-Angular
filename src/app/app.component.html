@@ -1,29 +1,49 @@
-<header>
-  <select class="bg-gray-100 text-gray-900 border-0 rounded-md p-2 mb-4 focus:bg-gray-200 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150" id="gender">
-    <option value="male">Male</option>
-    <option value="female">Female</option>
-    <option value="other">Other</option>
-  </select>
+<header class="search-header">
+  <form class="search-form">
+      <input type="text" placeholder="Origen" required aria-label="Origen">
+      <input type="text" placeholder="Destino" required aria-label="Destino">
+      <input type="date" required aria-label="Fecha de viaje">
+      <select aria-label="Número de pasajeros">
+          <option>1 Pasajero</option>
+          <option>2 Pasajeros</option>
+          <option>3 Pasajeros</option>
+          <option>4+ Pasajeros</option>
+      </select>
+      <button type="submit">Buscar Vuelos</button>
+  </form>
 </header>
 
-<main class="main">
-  <div id="backImg">
-    <section class="content">
-      <div class="pill-group">
-        <h1>
-          Nunca pagues de más por tu viaje
-        </h1>
-        <p>
-          VLC-Travel busca los mejores precios, ayudandote así a reservar tus vuelos justo a tiempo y a ahorrar siempre todo lo posible. 
-        </p>
-        <div class="social-links">
-          <button mat-flat-button>
-            Descarga nuestra APP
-          </button>
-        </div>
+<main>
+  <section class="hero">
+      <div>
+          <h1>Descubre el mundo con SkyJourney</h1>
       </div>
-    </section>
-  </div>
+  </section>
+
+  <section class="featured">
+      <h2>Ofertas Destacadas</h2>
+      <div class="offers">
+          <div class="offer">
+              <h3>París</h3>
+              <p>Vuelos desde $499</p>
+              <button>Ver Oferta</button>
+          </div>
+          <div class="offer">
+              <h3>Tokio</h3>
+              <p>Vuelos desde $799</p>
+              <button>Ver Oferta</button>
+          </div>
+          <div class="offer">
+              <h3>Nueva York</h3>
+              <p>Vuelos desde $399</p>
+              <button>Ver Oferta</button>
+          </div>
+      </div>
+  </section>
 </main>
+
+<footer>
+  <p>&copy; 2023 SkyJourney. Todos los derechos reservados.</p>
+</footer>
 
 <router-outlet />
