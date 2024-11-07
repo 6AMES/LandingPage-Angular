@@ -80,7 +80,7 @@ h1 {
 }
 
 .hero {
-    background-image: url("../assets/images/space.jpeg");
+    background-image: url('../assets/images/space.jpeg');
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -151,17 +151,55 @@ h1 {
 }
 
 .offer {
-    background-color: #EDEDED;
-    border-radius: 3rem;
+    border-radius: 1rem;
     margin: 1rem;
     width: calc(50% - 2rem);
     color: #000000;
+    position: relative;
+    overflow: hidden;
+    text-align: left;
 }
 
 .offer img {
     width: 100%;
-    height: 480px;
-    border-radius: 2rem;
+    height: 100%;
+    transition: all 0.3s ease-in-out;
+}
+
+.offer-content {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    padding-left: 2rem;
+    transition: all 0.3s ease-in-out;
+}
+
+.offer:hover .offer-content {
+    left: 0;
+}
+
+.offer:hover img {
+    transform: scale(1.1);
+}
+
+.offer h2 {
+    color: #EDEDED;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.offer p {
+    color: #EDEDED;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    padding-right: 50%;
 }
 
 .offer button {
@@ -171,10 +209,108 @@ h1 {
     padding: 0.5rem 1rem;
     border-radius: 30px;
     cursor: pointer;
-    margin-top: 1rem;
     width: 200px;
     height: 50px;
     font-size: 1rem;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+.offer button:hover {
+    background-color: #8f09e9;
+}
+
+.popular-destinations {
+    background-color: #000000;
+    padding: 3rem;
+    text-align: center;
+}
+
+.destination-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.destination-card {
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+    color: #EDEDED;
+}
+
+.destination-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.destination-card h2,
+.destination-card p {
+    position: absolute;
+    left: -125px;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    text-align: left;
+    text-shadow: 0px 2px rgba(0, 0, 0, 0.5);
+}
+
+.destination-card h2 {
+    top: 1rem;
+    z-index: 2;
+    font-family: Pilowlava;
+    font-size: 2rem;
+}
+
+.destination-card p {
+    bottom: -50px;
+    left: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.destination-card:hover h2 {
+    left: 1rem;
+    opacity: 1;
+}
+
+.destination-card:hover p {
+    bottom: 1rem;
+    opacity: 1;
+}
+
+.testimonials {
+    background-color: #000000;
+    color: #EDEDED;
+    padding: 3rem;
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.testimonial-card {
+    background-color: #1a1a1a;
+    border-radius: 1rem;
+    padding: 2rem;
+    text-align: left;
+}
+
+.testimonial-card p {
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.testimonial-card .author {
     font-weight: bold;
 }
 
@@ -200,10 +336,14 @@ footer {
     .search-form input, .search-form select, .search-form button {
         width: 100%;
     }
+
+    .offer {
+        width: 100%;
+    }
 }
 
 @media (max-width: 480px) {
-    .offer {
-        width: 100%;
+    .hero span {
+        font-size: 6rem;
     }
 }
